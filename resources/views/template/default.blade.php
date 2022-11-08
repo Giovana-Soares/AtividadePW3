@@ -18,17 +18,11 @@
         <a href="/cliente"> Cliente </a>
         <a href="/produto"> Produto </a>
         <a href="/pedido"> Pedido </a>
+        <a href="/graficos"> Graficos </a>
     </header>
    
     @yield("content")
 
-    <!-- caixa de texto com botão de busca -->
-    <aside>
-        <div id="show">
-            <input type="text" id="txtbusca" placeholder="Pesquisar..."/>
-            <button id="BotaoBuscar">Buscar</button>
-        </div>
-    </aside>
 
     <footer>
         <p> Rodapé &copy; 2022</p>

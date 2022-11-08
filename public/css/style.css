@@ -49,15 +49,15 @@ body{
     font-style: italic;
   }
   
-  form{
+  /* form{
     display: flex;
     flex-direction: column;
     width: 70%;
     height: 50px;
     width: 50%;
   }
-  
-  input, select{
+   */
+  /* input, select{
     margin-top: 10px;
     margin-bottom: 20px;
     height: 10px;
@@ -66,7 +66,7 @@ body{
     border: none;
     font-size: 15px;
     flex-wrap: nowrap;
-  }
+  } */
   
   label {
     justify-content: space-between;

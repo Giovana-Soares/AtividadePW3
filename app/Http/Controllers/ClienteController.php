@@ -42,11 +42,13 @@ class ClienteController extends Controller
         $cliente -> Nome = $request->txNome;
         $cliente -> DtNasc = $request->txDataNasc;
         $cliente -> EstadoCivil = $request->txEstadoCivil;
+        $cliente -> Cep = $request->txCep;
+        $cliente -> Rua = $request ->rua;
         $cliente -> Numero = $request->txNum;
         $cliente -> Complemento = $request->txComple;
-        $cliente -> Cep = $request->txCep;
-        $cliente -> Cidade = $request->txCidade;
-        $cliente -> Estado = $request->txEstado;
+        $cliente -> Bairro = $request -> bairro; 
+        $cliente -> Cidade = $request->cidade;
+        $cliente -> Estado = $request-> uf;
         $cliente -> Rg = $request->txRg;
         $cliente -> Cpf = $request->txCpf;
         $cliente -> Email = $request->txEmail;

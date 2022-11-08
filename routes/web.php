@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/graficos', function () {
+    return view('graficos');
+});
+
 Route::get('/categoria','CategoriaController@index');
 Route::get('/produto','ProdutoController@index');
 Route::get('/pedido','PedidoController@index');
