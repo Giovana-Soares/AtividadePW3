@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ProdutoModel;
+use Illuminate\Support\Facades\DB;
 
 class ProdutoController extends Controller
 {
@@ -16,7 +17,7 @@ class ProdutoController extends Controller
     {
         //echo ("Se aparecer");
         $produto = ProdutoModel::all();
-        return view('produto',compact('produto'));
+        return $produto;
         //
     }
 
@@ -94,4 +95,12 @@ class ProdutoController extends Controller
         ProdutoModel::where('idProduto',$id)->delete();
         return redirect("/produto");
     }
+
+    public function innerJoin() {
+        $produto = DB::table('tbproduto')
+            ->join('tbcategoria', 'tbproduto.idCategoria', '=', 'tbcategoria.idCategoria')
+            ->select( 'tbproduto.produto ', 'tbcategoria.Categoria', 'tbproduto.valor')
+            ->get();
+        return $produto;
+    }  
 }

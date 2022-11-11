@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +38,4 @@ Route::get('/produto/{id}','ProdutoController@destroy');
 Route::get('/cliente/{id}','ClienteController@destroy');
 
 Route::get('/cliente/{id}','ClienteController@show');
+
