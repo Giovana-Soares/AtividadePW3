@@ -16,8 +16,11 @@ class ProdutoController extends Controller
     public function index()
     {
         //echo ("Se aparecer");
-        $produto = ProdutoModel::all();
-        return $produto;
+        $produto = DB::table('tbproduto')
+            ->join('tbcategoria', 'tbproduto.idCategoria', '=', 'tbcategoria.idCategoria')
+            ->select('tbproduto.idProduto', 'tbcategoria.Categoria', 'tbproduto.produto', 'tbproduto.valor')
+            ->get();
+            return view('produto',compact('produto'));
         //
     }
 
@@ -96,11 +99,12 @@ class ProdutoController extends Controller
         return redirect("/produto");
     }
 
-    public function innerJoin() {
-        $produto = DB::table('tbproduto')
-            ->join('tbcategoria', 'tbproduto.idCategoria', '=', 'tbcategoria.idCategoria')
-            ->select( 'tbproduto.produto ', 'tbcategoria.Categoria', 'tbproduto.valor')
-            ->get();
-        return $produto;
-    }  
+    // public function innerJoin() 
+    // {
+    //     $produto = DB::table('tbproduto')
+    //         ->join('tbcategoria', 'tbproduto.idCategoria', '=', 'tbcategoria.idCategoria')
+    //         ->select('tbproduto.produto', 'tbcategoria.Categoria', 'tbproduto.valor')
+    //         ->get();
+    //     return $produto;
+    // }  
 }

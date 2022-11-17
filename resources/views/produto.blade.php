@@ -54,7 +54,7 @@
         <thead>
             <tr>
             <th scope="col">id</th>
-            <th scope="col">idCategoria:    </th>
+            <th scope="col">Categoria:    </th>
             <th scope="col">Produto:    </th>
             <th scope="col">Valor:    </th>
             </tr>
@@ -63,7 +63,7 @@
         @foreach($produto as $c)
             <tr>
             <th scope="row">{{$c-> idProduto}}</th>
-            <td> {{$c-> idCategoria}} </td>
+            <td> {{$c-> Categoria}} </td>
             <td> {{$c-> produto}} </td>
             <td> {{$c-> valor}} </td>
             <td>

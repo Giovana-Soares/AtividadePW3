@@ -39,3 +39,4 @@ Route::get('/cliente/{id}','ClienteController@destroy');
 
 Route::get('/cliente/{id}','ClienteController@show');
 
+
