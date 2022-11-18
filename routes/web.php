@@ -39,4 +39,8 @@ Route::get('/cliente/{id}','ClienteController@destroy');
 
 Route::get('/cliente/{id}','ClienteController@show');
 
+Route::get('/produto/{id}','ProdutoController@productById');
 
+
+Route::get('/produto/{id}/editar','ProdutoController@edit');
+Route::post('/produtoEditar/{id}', 'ProdutoController@update');

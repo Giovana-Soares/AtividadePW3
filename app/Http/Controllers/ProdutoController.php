@@ -24,6 +24,14 @@ class ProdutoController extends Controller
         //
     }
 
+
+    public function productById($id){ 
+
+        $produto = ProdutoModel::where('idProduto','=',$id)->get();
+        
+        return $produto; 
+        
+    } 
     /**
      * Show the form for creating a new resource.
      *
@@ -72,7 +80,9 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produtos = ProdutoModel::find($id);
+        $title = "Editar Genero  - {$produtos->produto}";
+        return view('produtoEditar', compact('title', 'produtos'));
     }
 
     /**
@@ -84,7 +94,11 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produto = ProdutoModel::find($id); 
+        $produto -> update(['idCategoria'=>$request->txIdCategoria]);
+        $produto -> update(['produto'=>$request->txProduto]);
+        $produto -> update(['valor'=>$request->txValor]);
+        return redirect("/produto");
     }
 
     /**

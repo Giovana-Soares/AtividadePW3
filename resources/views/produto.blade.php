@@ -69,6 +69,9 @@
             <td>
                 <a href="/produto/{{$c->idProduto}}"> Excluir </a>                 
             </td>
+            <td>
+                <a href="/produto/{{$c->idProduto}}/editar"> Editar </a>                 
+            </td>
             </tr>
         @endforeach
         </tbody>
