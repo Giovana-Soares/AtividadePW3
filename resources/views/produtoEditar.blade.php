@@ -9,9 +9,9 @@
     <section> 
         <form action="{{url('/produtoEditar/'.$produtos->idProduto)}} " method="post">
             {{csrf_field()}}
-            <div class = "form-group">
+            <!-- <div class = "form-group">
                 <input class = "form-control" type=number id = "txIdProduto" name="txIdProduto" placeholder="Id Produto" value= "{{$produtos->idProduto}}" />
-            </div>
+            </div> -->
             <div class = "form-group">
                 <input class = "form-control" type=number id= "txIdCategoria" name="txIdCategoria" placeholder="Id Categoria" value= "{{$produtos->idCategoria}}" />
             </div>

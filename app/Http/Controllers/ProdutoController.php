@@ -27,9 +27,15 @@ class ProdutoController extends Controller
 
     public function productById($id){ 
 
-        $produto = ProdutoModel::where('idProduto','=',$id)->get();
+        // $produto = ProdutoModel::where('idProduto','=',$id)->get();
         
-        return $produto; 
+
+
+        $produto = ProdutoModel::where('idProduto','=',$id)->get();
+        //$title = "Editar Produto  - {$produto->produto}";
+        //return view('produtoProcurado', compact( 'produto'));
+
+       return $produto; 
         
     } 
     /**
@@ -37,6 +43,17 @@ class ProdutoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function produtoSalvar(Request $request){ 
+
+        $produto = new ProdutoModel;        
+        $produto->produto = $request->input('produto'); 
+        $produto->idCategoria = $request->input('id_categoria'); 
+        $produto->valor = $request->input('valor'); 
+        $produto -> save();  
+    } 
+
     public function create()
     {
         //
@@ -81,7 +98,7 @@ class ProdutoController extends Controller
     public function edit($id)
     {
         $produtos = ProdutoModel::find($id);
-        $title = "Editar Genero  - {$produtos->produto}";
+        $title = "Editar Produto  - {$produtos->produto}";
         return view('produtoEditar', compact('title', 'produtos'));
     }
 
@@ -95,7 +112,7 @@ class ProdutoController extends Controller
     public function update(Request $request, $id)
     {
         $produto = ProdutoModel::find($id); 
-        $produto -> update(['idCategoria'=>$request->txIdCategoria]);
+       // $produto -> update(['idCategoria'=>$request->txIdCategoria]);
         $produto -> update(['produto'=>$request->txProduto]);
         $produto -> update(['valor'=>$request->txValor]);
         return redirect("/produto");
@@ -112,13 +129,5 @@ class ProdutoController extends Controller
         ProdutoModel::where('idProduto',$id)->delete();
         return redirect("/produto");
     }
-
-    // public function innerJoin() 
-    // {
-    //     $produto = DB::table('tbproduto')
-    //         ->join('tbcategoria', 'tbproduto.idCategoria', '=', 'tbcategoria.idCategoria')
-    //         ->select('tbproduto.produto', 'tbcategoria.Categoria', 'tbproduto.valor')
-    //         ->get();
-    //     return $produto;
-    // }  
+  
 }

@@ -1,4 +1,6 @@
-<head>
+<!-- <head> -->
+@extends('template/default') 
+@section('content')
   <div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -64,9 +66,11 @@
       }
     </script>
   </div>
-</head>
 
-<body>
+
+<section>
   <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
   <div id="piechart" style="width: 900px; height: 500px;"></div>
-</body>
+</section>
+
+@endsection

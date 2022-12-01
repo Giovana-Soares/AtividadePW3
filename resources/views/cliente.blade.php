@@ -116,8 +116,7 @@
         <label>Celular:
         <input name="txCelular" type="text"  size="60" /></label><br />
         <div>
-                <!-- //<input type="submit" value="Salvar" />  -->
-                <button type="submit" class="btn btn-success">Cadastrar</button>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
         </div>
     </form>
     <section>

@@ -8,10 +8,10 @@
     <section> 
         <form action="{{url('/categoria/inserir')}}" method="post">
             {{csrf_field()}}
-
+<!-- 
             <div class = "form-group">
                 <input class = "form-control form-control-lg" type=number name="txIdCategoria" placeholder="ID da Categoria" value= />
-            </div>
+            </div> -->
 
             <div class = "form-group">
                 <input class = "form-control form-control-lg" type=text name="txCategoria" placeholder="Nome da Categoria" value= ""/>

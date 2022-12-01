@@ -2,20 +2,15 @@
 @section('content') 
 
 <script>
-        function obterDados(){
-            // alert("Teste");
-
-            var id = document.getElementById("txIdProduto").value;          
+        function obterDados(){       
             var idCategoria = document.getElementById("txIdCategoria").value;
 
-            if (id<=0){
-                alert("O id do produto deve ser maior que zero");
-            }
-            else{
                 if(idCategoria<=0){
                     alert("O id da categoria deve ser maior que zero");
+                    return false
                 }
-            }
+
+                return true
         }
 </script>
 
@@ -27,9 +22,9 @@
     <section> 
         <form action="{{url('/produto/inserir')}}" method="post">
             {{csrf_field()}}
-            <div class = "form-group">
+            <!-- <div class = "form-group">
                 <input class = "form-control" type=number id = "txIdProduto" name="txIdProduto" placeholder="Id Produto" value=/>
-            </div>
+            </div> -->
             <div class = "form-group">
                 <input class = "form-control" type=number id= "txIdCategoria" name="txIdCategoria" placeholder="Id Categoria" value= />
             </div>
@@ -42,7 +37,8 @@
 
             <div>
                 <!-- <input class="btn btn-primary btn-lg" type="submit" value="Salvar" /> -->
-                <button type="submit" class="btn btn-success" onclick="obterDados()">Cadastrar</button>    
+                <!-- <button type="submit" class="btn btn-success" onclick="obterDados()">Cadastrar</button>     -->
+                <button  class="btn btn-success" onclick="return obterDados()">Cadastrar</button>   
             </div>
         </form>
     </section>
